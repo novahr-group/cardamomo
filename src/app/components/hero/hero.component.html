@@ -1,5 +1,9 @@
 <section id="inicio" class="hero" aria-labelledby="hero-title">
-  <div class="hero__bg" aria-hidden="true"></div>
+  <div
+    class="hero__bg"
+    [style.backgroundImage]="'linear-gradient(135deg, rgba(13, 13, 13, 0.92) 0%, rgba(26, 60, 52, 0.88) 50%, rgba(45, 106, 79, 0.85) 100%), url(' + heroBackground + ')'"
+    aria-hidden="true"
+  ></div>
   <div class="hero__pattern" aria-hidden="true"></div>
 
   <div class="container hero__grid">

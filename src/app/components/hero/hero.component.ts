@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
+import { SHARED_IMAGES } from '../../i18n/shared-images';
 import { LocaleService } from '../../services/locale.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { LocaleService } from '../../services/locale.service';
 })
 export class HeroComponent {
   readonly youtubeVideoId = 'Tnb2_cgNKlE';
+  readonly heroBackground = SHARED_IMAGES.heroBackground;
 
   constructor(readonly locale: LocaleService) {}
 

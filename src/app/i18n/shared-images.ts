@@ -33,7 +33,7 @@ export const SHARED_IMAGES = {
   logDubai:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Jebel_Ali_Port_2_Imresolt.jpg/500px-Jebel_Ali_Port_2_Imresolt.jpg',
 
-  /** Fondo del hero — Unsplash (licencia libre) */
+  /** Fondo del hero — cápsulas y semillas de cardamomo (Wikimedia Commons) */
   heroBackground:
-    'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=1920&q=80&auto=format&fit=crop'
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Elettaria_cardamomum_Capsules_and_seeds.jpg/1920px-Elettaria_cardamomum_Capsules_and_seeds.jpg'
 };
