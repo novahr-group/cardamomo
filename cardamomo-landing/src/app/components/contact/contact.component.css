@@ -1,0 +1,217 @@
+.contact {
+  background: var(--color-blanco);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+/* Info lateral */
+.contact__info h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-verde-oscuro);
+  margin-bottom: 1.5rem;
+}
+
+.contact__representative {
+  padding: 1.25rem;
+  background: var(--color-verde-oscuro);
+  color: var(--color-blanco);
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--color-dorado);
+}
+
+.contact__representative strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  color: var(--color-dorado);
+  margin-bottom: 0.25rem;
+}
+
+.contact__representative span {
+  display: block;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.contact__cedula {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem !important;
+  opacity: 0.75 !important;
+}
+
+.contact__info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact__info li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contact__icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-verde-suave);
+  border-radius: 50%;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.contact__info strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-dorado-oscuro);
+  margin-bottom: 0.25rem;
+}
+
+.contact__info a {
+  color: var(--color-verde);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.contact__info a:hover {
+  color: var(--color-dorado-oscuro);
+}
+
+.contact__markets p {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-verde-oscuro);
+  margin-bottom: 0.75rem;
+}
+
+.contact__market-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact__market-tags span {
+  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  background: var(--color-crema);
+  border: 1px solid rgba(26, 60, 52, 0.15);
+  border-radius: 2px;
+  color: var(--color-verde-oscuro);
+}
+
+/* Formulario */
+.contact__form-wrapper {
+  background: var(--color-crema);
+  padding: 2.5rem;
+  border-radius: 4px;
+  border: 1px solid rgba(26, 60, 52, 0.1);
+}
+
+.contact__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.contact__field {
+  margin-bottom: 1.25rem;
+}
+
+.contact__field label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-verde-oscuro);
+  margin-bottom: 0.5rem;
+}
+
+.contact__field input,
+.contact__field select,
+.contact__field textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  border: 1px solid rgba(26, 60, 52, 0.2);
+  border-radius: 2px;
+  background: var(--color-blanco);
+  color: var(--color-negro-suave);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.contact__field input:focus,
+.contact__field select:focus,
+.contact__field textarea:focus {
+  outline: none;
+  border-color: var(--color-verde);
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+.contact__field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact__submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.contact__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Mensaje de éxito */
+.contact__success {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.contact__success span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--color-verde);
+  color: var(--color-blanco);
+  font-size: 2rem;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.contact__success h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--color-verde-oscuro);
+  margin-bottom: 0.75rem;
+}
+
+.contact__success p {
+  color: var(--color-negro-suave);
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__form-row {
+    grid-template-columns: 1fr;
+  }
+}

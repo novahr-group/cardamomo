@@ -1,0 +1,35 @@
+<footer class="footer" role="contentinfo">
+  <div class="footer__pattern" aria-hidden="true"></div>
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="#inicio" class="footer__logo">
+          <span aria-hidden="true">✦</span>
+          <strong>Cardamomo Guatemala</strong>
+        </a>
+        <p>{{ locale.t().footer.tagline }}</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Enlaces del pie de página">
+        <h4>{{ locale.t().footer.navTitle }}</h4>
+        <ul>
+          <li *ngFor="let link of locale.t().nav">
+            <a [href]="link.href">{{ link.label }}</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer__export">
+        <h4>{{ locale.t().footer.exportTitle }}</h4>
+        <p>{{ locale.t().footer.exportRegions }}</p>
+        <p class="footer__origin">{{ locale.t().footer.origin }}</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {{ currentYear }} {{ locale.t().footer.copyright }}</p>
+      <p class="footer__representative">{{ locale.t().footer.representative }}</p>
+      <p class="footer__tagline">{{ locale.t().footer.motto }}</p>
+    </div>
+  </div>
+</footer>

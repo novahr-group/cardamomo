@@ -1,0 +1,44 @@
+<section id="nosotros" class="about section pattern-bg" aria-labelledby="about-title">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label">{{ locale.t().about.label }}</span>
+      <h2 id="about-title" class="section-title">{{ locale.t().about.title }}</h2>
+      <div class="maya-divider" aria-hidden="true"><span></span></div>
+      <p class="section-subtitle">{{ locale.t().about.subtitle }}</p>
+    </header>
+
+    <div class="about__grid">
+      <div class="about__image">
+        <img
+          [src]="images.aboutPlant"
+          [alt]="locale.t().about.imageAlt"
+          loading="lazy"
+          width="600"
+          height="700"
+        />
+        <div class="about__image-badge">
+          <span>{{ locale.t().about.badge }}</span>
+        </div>
+      </div>
+
+      <div class="about__content">
+        <p class="about__lead">{{ locale.t().about.lead }}</p>
+        <p>{{ locale.t().about.p1 }}</p>
+        <p>{{ locale.t().about.p2 }}</p>
+
+        <blockquote class="about__quote">
+          <p>{{ locale.t().about.quote }}</p>
+          <cite>{{ locale.t().about.quoteCite }}</cite>
+        </blockquote>
+      </div>
+    </div>
+
+    <ul class="about__values">
+      <li *ngFor="let value of locale.t().about.values" class="about__value-card">
+        <span class="about__value-icon" aria-hidden="true">{{ value.icon }}</span>
+        <h3>{{ value.title }}</h3>
+        <p>{{ value.description }}</p>
+      </li>
+    </ul>
+  </div>
+</section>

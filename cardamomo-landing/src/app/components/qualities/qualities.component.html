@@ -1,0 +1,72 @@
+<section id="calidades" class="qualities section" aria-labelledby="qualities-title">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label">{{ locale.t().qualities.label }}</span>
+      <h2 id="qualities-title" class="section-title">{{ locale.t().qualities.title }}</h2>
+      <div class="maya-divider" aria-hidden="true"><span></span></div>
+      <p class="section-subtitle">{{ locale.t().qualities.subtitle }}</p>
+    </header>
+
+    <ul class="qualities__criteria">
+      <li *ngFor="let criterion of locale.t().qualities.criteria">
+        <span class="qualities__criteria-icon" aria-hidden="true">{{ criterion.icon }}</span>
+        <div>
+          <strong>{{ criterion.title }}</strong>
+          <p>{{ criterion.description }}</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="qualities__table-wrapper">
+      <table class="qualities__table">
+        <caption class="sr-only">{{ locale.t().qualities.tableCaption }}</caption>
+        <thead>
+          <tr>
+            <th scope="col">{{ locale.t().qualities.cols.grade }}</th>
+            <th scope="col">{{ locale.t().qualities.cols.size }}</th>
+            <th scope="col">{{ locale.t().qualities.cols.moisture }}</th>
+            <th scope="col">{{ locale.t().qualities.cols.description }}</th>
+            <th scope="col">{{ locale.t().qualities.cols.markets }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of locale.t().qualities.grades">
+            <td data-label="Grado">
+              <span class="qualities__badge" [style.background-color]="item.color">{{ item.code }}</span>
+              <strong>{{ item.grade }}</strong>
+            </td>
+            <td [attr.data-label]="locale.t().qualities.cols.size">{{ item.size }}</td>
+            <td [attr.data-label]="locale.t().qualities.cols.moisture">{{ item.moisture }}</td>
+            <td [attr.data-label]="locale.t().qualities.cols.description">{{ item.description }}</td>
+            <td [attr.data-label]="locale.t().qualities.cols.markets">
+              <span *ngFor="let market of item.markets" class="qualities__market">{{ market }}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="qualities__cards">
+      <article *ngFor="let item of locale.t().qualities.grades" class="qualities__card">
+        <header class="qualities__card-header">
+          <span class="qualities__badge" [style.background-color]="item.color">{{ item.code }}</span>
+          <h3>{{ item.grade }}</h3>
+        </header>
+        <dl class="qualities__card-specs">
+          <div>
+            <dt>{{ locale.t().qualities.cols.size }}</dt>
+            <dd>{{ item.size }}</dd>
+          </div>
+          <div>
+            <dt>{{ locale.t().qualities.cols.moisture }}</dt>
+            <dd>{{ item.moisture }}</dd>
+          </div>
+        </dl>
+        <p>{{ item.description }}</p>
+        <div class="qualities__card-markets">
+          <span *ngFor="let market of item.markets" class="qualities__market">{{ market }}</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

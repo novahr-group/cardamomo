@@ -1,0 +1,280 @@
+.logistics {
+  background: linear-gradient(180deg, var(--color-verde-suave) 0%, var(--color-crema) 50%);
+}
+
+/* Ecom times — ciclo comercial */
+.logistics__ecom {
+  background: var(--color-negro);
+  border-radius: 4px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.logistics__ecom-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-dorado);
+  margin-bottom: 2rem;
+}
+
+.logistics__ecom-steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logistics__ecom-steps li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 4px;
+  min-width: 140px;
+  position: relative;
+}
+
+/* Flechas entre pasos */
+.logistics__ecom-steps li:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-dorado);
+  font-size: 1.25rem;
+}
+
+.logistics__ecom-time {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-blanco);
+  line-height: 1;
+}
+
+.logistics__ecom-label {
+  font-size: 0.8125rem;
+  color: var(--color-dorado-claro);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Rutas */
+.logistics__routes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.logistics__route-card {
+  background: var(--color-blanco);
+  border-radius: 4px;
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  border-bottom: 3px solid var(--color-verde);
+  transition: transform var(--transition-smooth);
+}
+
+.logistics__route-card:hover {
+  transform: translateY(-4px);
+}
+
+.logistics__route-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.logistics__flag {
+  font-size: 2rem;
+}
+
+.logistics__route-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  color: var(--color-verde-oscuro);
+}
+
+.logistics__route-details {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logistics__route-details dt {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-dorado-oscuro);
+  margin-bottom: 0.25rem;
+}
+
+.logistics__route-details dd {
+  font-weight: 500;
+  color: var(--color-negro-suave);
+}
+
+.logistics__highlight {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-verde) !important;
+  font-weight: 700;
+}
+
+.logistics__route-note {
+  font-size: 0.875rem;
+  color: var(--color-negro-suave);
+  opacity: 0.8;
+  line-height: 1.6;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Cadena de exportación */
+.logistics__pipeline {
+  background: var(--color-blanco);
+  border-radius: 4px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-soft);
+  border-top: 3px solid var(--color-dorado);
+}
+
+.logistics__pipeline-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-verde-oscuro);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logistics__pipeline-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.logistics__pipeline-steps li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.logistics__pipeline-number {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-verde-oscuro);
+  color: var(--color-dorado);
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.logistics__pipeline-steps strong {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--color-verde-oscuro);
+  margin-bottom: 0.375rem;
+}
+
+.logistics__pipeline-steps p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* Galería logística */
+.logistics__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.logistics__gallery-item {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.logistics__gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.logistics__gallery-item figcaption {
+  padding: 0.75rem 1rem;
+  background: var(--color-verde-oscuro);
+  color: var(--color-dorado-claro);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Info adicional */
+.logistics__info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.logistics__info-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--color-blanco);
+  border-radius: 4px;
+  border-left: 3px solid var(--color-dorado);
+}
+
+.logistics__info-item span {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.logistics__info-item strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  color: var(--color-verde-oscuro);
+  margin-bottom: 0.375rem;
+}
+
+.logistics__info-item p {
+  font-size: 0.875rem;
+  color: var(--color-negro-suave);
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .logistics__routes,
+  .logistics__info,
+  .logistics__pipeline-steps,
+  .logistics__gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .logistics__ecom-steps li:not(:last-child)::after {
+    display: none;
+  }
+
+  .logistics__ecom-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,60 @@
+<header
+  class="header"
+  [class.header--scrolled]="scrolled()"
+  role="banner"
+>
+  <div class="container header__inner">
+    <a href="#inicio" class="header__logo" (click)="closeMenu()" aria-label="Cardamomo Guatemala - Inicio">
+      <span class="header__logo-icon" aria-hidden="true">✦</span>
+      <span class="header__logo-text">
+        <strong>Cardamomo</strong>
+        <small>Guatemala</small>
+      </span>
+    </a>
+
+    <div class="header__actions">
+      <div class="header__lang" role="group" [attr.aria-label]="locale.lang() === 'es' ? 'Idioma' : 'Language'">
+        <button
+          type="button"
+          class="header__lang-btn"
+          [class.header__lang-btn--active]="locale.lang() === 'es'"
+          (click)="setLang('es')"
+        >{{ locale.t().header.langEs }}</button>
+        <span class="header__lang-sep" aria-hidden="true">|</span>
+        <button
+          type="button"
+          class="header__lang-btn"
+          [class.header__lang-btn--active]="locale.lang() === 'en'"
+          (click)="setLang('en')"
+        >{{ locale.t().header.langEn }}</button>
+      </div>
+
+      <button
+        class="header__toggle"
+        type="button"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="main-nav"
+        [attr.aria-label]="locale.lang() === 'es' ? 'Abrir menú de navegación' : 'Open navigation menu'"
+        (click)="toggleMenu()"
+      >
+        <span class="header__toggle-bar" [class.open]="menuOpen()"></span>
+      </button>
+    </div>
+
+    <nav
+      id="main-nav"
+      class="header__nav"
+      [class.header__nav--open]="menuOpen()"
+      aria-label="Navegación principal"
+    >
+      <ul class="header__nav-list">
+        <li *ngFor="let link of locale.t().nav">
+          <a class="header__nav-link" [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+        </li>
+      </ul>
+      <a href="#contacto" class="btn btn--primary header__cta" (click)="closeMenu()">
+        {{ locale.t().header.cta }}
+      </a>
+    </nav>
+  </div>
+</header>

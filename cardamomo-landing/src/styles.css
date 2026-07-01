@@ -1,0 +1,244 @@
+/* ==========================================================================
+   CARDAMOMO — Estilos globales
+   Paleta: verde (naturaleza), negro (elegancia), blanco (claridad), dorado (premium)
+   Personaliza las variables CSS para ajustar colores y espaciado.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colores principales */
+  --color-verde-oscuro: #1a3c34;
+  --color-verde: #2d6a4f;
+  --color-verde-claro: #40916c;
+  --color-verde-suave: #d8f3dc;
+  --color-negro: #0d0d0d;
+  --color-negro-suave: #1a1a1a;
+  --color-blanco: #ffffff;
+  --color-crema: #f8f6f0;
+  --color-dorado: #c9a227;
+  --color-dorado-claro: #e8c547;
+  --color-dorado-oscuro: #9a7b1a;
+
+  /* Tipografía */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+
+  /* Espaciado */
+  --section-padding: clamp(4rem, 8vw, 7rem);
+  --container-max: 1200px;
+  --container-narrow: 900px;
+
+  /* Transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Sombras */
+  --shadow-soft: 0 4px 24px rgba(13, 13, 13, 0.08);
+  --shadow-medium: 0 8px 32px rgba(13, 13, 13, 0.12);
+  --shadow-gold: 0 4px 20px rgba(201, 162, 39, 0.25);
+}
+
+/* Reset y base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-negro-suave);
+  background-color: var(--color-crema);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Espaciado de secciones — aplicar clase .section en cada bloque principal */
+.section {
+  padding: var(--section-padding) 0;
+}
+
+/* Contenedor reutilizable */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2rem);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+/* Encabezados de sección */
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-dorado);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-verde-oscuro);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--color-negro-suave);
+  opacity: 0.85;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Divisor decorativo inspirado en tejidos guatemaltecos */
+.maya-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem auto;
+}
+
+.maya-divider::before,
+.maya-divider::after {
+  content: '';
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-dorado), transparent);
+}
+
+.maya-divider span {
+  width: 8px;
+  height: 8px;
+  background: var(--color-dorado);
+  transform: rotate(45deg);
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--color-dorado), var(--color-dorado-oscuro));
+  color: var(--color-negro);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(201, 162, 39, 0.4);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-blanco);
+  border: 2px solid var(--color-blanco);
+}
+
+.btn--outline:hover {
+  background: var(--color-blanco);
+  color: var(--color-verde-oscuro);
+}
+
+.btn--dark {
+  background: var(--color-verde-oscuro);
+  color: var(--color-blanco);
+}
+
+.btn--dark:hover {
+  background: var(--color-verde);
+}
+
+/* Patrón de fondo huipil (SVG inline como data URI en componentes) */
+.pattern-bg {
+  position: relative;
+}
+
+.pattern-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a3c34' fill-opacity='1'%3E%3Cpath d='M30 0l5 10-5 10-5-10zM0 30l10 5-10 5-10-5zM60 30l-10 5 10 5 10-5zM30 60l-5-10 5-10 5 10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Utilidades de accesibilidad */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Animación de entrada suave */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.8s ease forwards;
+}

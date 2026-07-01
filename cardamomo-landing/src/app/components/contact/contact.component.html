@@ -1,0 +1,116 @@
+<section id="contacto" class="contact section" aria-labelledby="contact-title">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label">{{ locale.t().contact.label }}</span>
+      <h2 id="contact-title" class="section-title">{{ locale.t().contact.title }}</h2>
+      <div class="maya-divider" aria-hidden="true"><span></span></div>
+      <p class="section-subtitle">{{ locale.t().contact.subtitle }}</p>
+    </header>
+
+    <div class="contact__grid">
+      <aside class="contact__info">
+        <h3>{{ locale.t().contact.infoTitle }}</h3>
+
+        <div class="contact__representative">
+          <strong>{{ contact.representative }}</strong>
+          <span>{{ locale.t().contact.representativeRole }}</span>
+          <span class="contact__cedula">{{ locale.t().contact.cedulaLabel }}: {{ contact.cedula }}</span>
+        </div>
+
+        <ul>
+          <li>
+            <span class="contact__icon" aria-hidden="true">✉</span>
+            <div>
+              <strong>{{ locale.t().contact.email }}</strong>
+              <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+            </div>
+          </li>
+          <li>
+            <span class="contact__icon" aria-hidden="true">☎</span>
+            <div>
+              <strong>{{ locale.t().contact.phone }}</strong>
+              <a [href]="'tel:' + contact.phone">{{ contact.phone }}</a>
+            </div>
+          </li>
+          <li>
+            <span class="contact__icon" aria-hidden="true">💬</span>
+            <div>
+              <strong>{{ locale.t().contact.whatsapp }}</strong>
+              <a [href]="whatsappUrl" target="_blank" rel="noopener">{{ contact.whatsapp }}</a>
+            </div>
+          </li>
+          <li>
+            <span class="contact__icon" aria-hidden="true">📍</span>
+            <div>
+              <strong>{{ locale.t().contact.office }}</strong>
+              <span>{{ locale.t().contact.address }}</span>
+            </div>
+          </li>
+          <li>
+            <span class="contact__icon" aria-hidden="true">🕐</span>
+            <div>
+              <strong>{{ locale.t().contact.hours }}</strong>
+              <span>{{ locale.t().contact.hoursValue }}</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="contact__markets">
+          <p>{{ locale.t().contact.marketsLabel }}</p>
+          <div class="contact__market-tags">
+            <span *ngFor="let tag of locale.t().contact.marketTags">{{ tag }}</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="contact__form-wrapper">
+        <div *ngIf="formSubmitted" class="contact__success" role="alert">
+          <span aria-hidden="true">✓</span>
+          <h3>{{ locale.t().contact.form.successTitle }}</h3>
+          <p>{{ locale.t().contact.form.successText }}</p>
+        </div>
+
+        <form *ngIf="!formSubmitted" class="contact__form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+          <div class="contact__form-row">
+            <div class="contact__field">
+              <label for="name">{{ locale.t().contact.form.name }}</label>
+              <input type="text" id="name" name="name" [(ngModel)]="formData.name" required autocomplete="name">
+            </div>
+            <div class="contact__field">
+              <label for="company">{{ locale.t().contact.form.company }}</label>
+              <input type="text" id="company" name="company" [(ngModel)]="formData.company" required autocomplete="organization">
+            </div>
+          </div>
+
+          <div class="contact__form-row">
+            <div class="contact__field">
+              <label for="email">{{ locale.t().contact.form.email }}</label>
+              <input type="email" id="email" name="email" [(ngModel)]="formData.email" required autocomplete="email">
+            </div>
+            <div class="contact__field">
+              <label for="country">{{ locale.t().contact.form.country }}</label>
+              <input type="text" id="country" name="country" [(ngModel)]="formData.country" required autocomplete="country-name">
+            </div>
+          </div>
+
+          <div class="contact__field">
+            <label for="product">{{ locale.t().contact.form.product }}</label>
+            <select id="product" name="product" [(ngModel)]="formData.product">
+              <option *ngFor="let opt of locale.t().contact.productOptions" [value]="opt.value">{{ opt.label }}</option>
+            </select>
+          </div>
+
+          <div class="contact__field">
+            <label for="message">{{ locale.t().contact.form.message }}</label>
+            <textarea id="message" name="message" rows="5" [(ngModel)]="formData.message" required
+              [placeholder]="locale.t().contact.form.messagePlaceholder"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary contact__submit" [disabled]="!contactForm.valid">
+            {{ locale.t().contact.form.submit }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

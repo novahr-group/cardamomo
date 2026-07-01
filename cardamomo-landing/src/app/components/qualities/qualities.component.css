@@ -1,0 +1,176 @@
+.qualities {
+  background: var(--color-negro);
+  color: var(--color-blanco);
+}
+
+.qualities .section-title {
+  color: var(--color-blanco);
+}
+
+.qualities .section-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Criterios de clasificación */
+.qualities__criteria {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.qualities__criteria li {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  border-radius: 4px;
+}
+
+.qualities__criteria-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.qualities__criteria strong {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--color-dorado);
+  margin-bottom: 0.375rem;
+}
+
+.qualities__criteria p {
+  font-size: 0.8125rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* Tabla desktop */
+.qualities__table-wrapper {
+  overflow-x: auto;
+  border-radius: 4px;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+}
+
+.qualities__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.qualities__table th {
+  background: var(--color-verde-oscuro);
+  color: var(--color-dorado);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 1.25rem;
+  text-align: left;
+}
+
+.qualities__table td {
+  padding: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.qualities__table tbody tr:hover {
+  background: rgba(45, 106, 79, 0.2);
+}
+
+.qualities__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-blanco);
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.qualities__table td[data-label="Grado"] {
+  display: flex;
+  align-items: center;
+}
+
+.qualities__market {
+  display: inline-block;
+  font-size: 0.6875rem;
+  padding: 0.25rem 0.625rem;
+  margin: 0.125rem;
+  background: rgba(201, 162, 39, 0.2);
+  color: var(--color-dorado-claro);
+  border-radius: 2px;
+}
+
+/* Tarjetas móviles — ocultas en desktop */
+.qualities__cards {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .qualities__criteria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .qualities__table-wrapper {
+    display: none;
+  }
+
+  .qualities__cards {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .qualities__card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+
+  .qualities__card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .qualities__card-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-dorado);
+  }
+
+  .qualities__card-specs {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .qualities__card-specs dt {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-dorado);
+    margin-bottom: 0.25rem;
+  }
+
+  .qualities__card-specs dd {
+    font-weight: 600;
+  }
+
+  .qualities__card p {
+    font-size: 0.9375rem;
+    opacity: 0.85;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+}

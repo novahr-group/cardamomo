@@ -1,0 +1,35 @@
+<section id="procesos" class="processes section pattern-bg" aria-labelledby="processes-title">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label">{{ locale.t().processes.label }}</span>
+      <h2 id="processes-title" class="section-title">{{ locale.t().processes.title }}</h2>
+      <div class="maya-divider" aria-hidden="true"><span></span></div>
+      <p class="section-subtitle">{{ locale.t().processes.subtitle }}</p>
+    </header>
+
+    <div class="processes__gallery">
+      <figure *ngFor="let img of locale.t().processes.images" class="processes__gallery-item">
+        <img [src]="img.src" [alt]="img.alt" loading="lazy" width="280" height="200">
+        <figcaption>{{ img.label }}</figcaption>
+      </figure>
+    </div>
+
+    <ol class="processes__timeline">
+      <li *ngFor="let step of locale.t().processes.steps; let last = last" class="processes__step">
+        <div class="processes__step-marker">
+          <span class="processes__step-number">{{ step.step }}</span>
+          <span class="processes__step-icon" aria-hidden="true">{{ step.icon }}</span>
+        </div>
+        <div class="processes__step-content" [class.processes__step-content--last]="last">
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="processes__cta">
+      <p>{{ locale.t().processes.ctaText }}</p>
+      <a href="#contacto" class="btn btn--dark">{{ locale.t().processes.ctaButton }}</a>
+    </div>
+  </div>
+</section>

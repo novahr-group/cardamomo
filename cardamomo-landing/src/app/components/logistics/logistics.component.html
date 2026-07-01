@@ -1,0 +1,88 @@
+<section id="logistica" class="logistics section" aria-labelledby="logistics-title">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label">{{ locale.t().logistics.label }}</span>
+      <h2 id="logistics-title" class="section-title">{{ locale.t().logistics.title }}</h2>
+      <div class="maya-divider" aria-hidden="true"><span></span></div>
+      <p class="section-subtitle">{{ locale.t().logistics.subtitle }}</p>
+    </header>
+
+    <div class="logistics__ecom">
+      <h3 class="logistics__ecom-title">{{ locale.t().logistics.ecomTitle }}</h3>
+      <ol class="logistics__ecom-steps">
+        <li *ngFor="let item of locale.t().logistics.ecomTimes">
+          <span class="logistics__ecom-time">{{ item.time }}</span>
+          <span class="logistics__ecom-label">{{ item.label }}</span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="logistics__routes">
+      <article *ngFor="let route of locale.t().logistics.routes" class="logistics__route-card">
+        <header class="logistics__route-header">
+          <span class="logistics__flag" aria-hidden="true">{{ route.flag }}</span>
+          <h3>{{ route.destination }}</h3>
+        </header>
+        <dl class="logistics__route-details">
+          <div>
+            <dt>{{ locale.t().logistics.routeCols.port }}</dt>
+            <dd>{{ route.port }}</dd>
+          </div>
+          <div>
+            <dt>{{ locale.t().logistics.routeCols.transit }}</dt>
+            <dd class="logistics__highlight">{{ route.transitTime }}</dd>
+          </div>
+          <div>
+            <dt>{{ locale.t().logistics.routeCols.incoterm }}</dt>
+            <dd>{{ route.incoterm }}</dd>
+          </div>
+        </dl>
+        <p class="logistics__route-note">{{ route.details }}</p>
+      </article>
+    </div>
+
+    <div class="logistics__pipeline">
+      <h3 class="logistics__pipeline-title">{{ locale.t().logistics.pipelineTitle }}</h3>
+      <ol class="logistics__pipeline-steps">
+        <li *ngFor="let step of locale.t().logistics.pipeline">
+          <span class="logistics__pipeline-number">{{ step.step }}</span>
+          <div>
+            <strong>{{ step.title }}</strong>
+            <p>{{ step.description }}</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="logistics__gallery">
+      <figure *ngFor="let img of locale.t().logistics.images" class="logistics__gallery-item">
+        <img [src]="img.src" [alt]="img.alt" loading="lazy" width="360" height="240">
+        <figcaption>{{ img.caption }}</figcaption>
+      </figure>
+    </div>
+
+    <div class="logistics__info">
+      <div class="logistics__info-item">
+        <span aria-hidden="true">🚢</span>
+        <div>
+          <strong>{{ locale.t().logistics.portOriginTitle }}</strong>
+          <p>{{ locale.t().logistics.portOriginText }}</p>
+        </div>
+      </div>
+      <div class="logistics__info-item">
+        <span aria-hidden="true">📋</span>
+        <div>
+          <strong>{{ locale.t().logistics.docsTitle }}</strong>
+          <p>{{ locale.t().logistics.docsText }}</p>
+        </div>
+      </div>
+      <div class="logistics__info-item">
+        <span aria-hidden="true">📍</span>
+        <div>
+          <strong>{{ locale.t().logistics.trackingTitle }}</strong>
+          <p>{{ locale.t().logistics.trackingText }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

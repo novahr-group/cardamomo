@@ -1,0 +1,51 @@
+<section id="inicio" class="hero" aria-labelledby="hero-title">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__pattern" aria-hidden="true"></div>
+
+  <div class="container hero__grid">
+    <div class="hero__content animate-in">
+      <p class="hero__badge">
+        <span aria-hidden="true">🇬🇹</span>
+        {{ locale.t().hero.badge }}
+      </p>
+
+      <h1 id="hero-title" class="hero__title">
+        {{ locale.t().hero.title }}<em>{{ locale.t().hero.titleEm }}</em>{{ locale.t().hero.titleEnd }}
+      </h1>
+
+      <div class="maya-divider" aria-hidden="true"><span></span></div>
+
+      <p class="hero__description">{{ locale.t().hero.description }}</p>
+
+      <div class="hero__actions">
+        <a href="#contacto" class="btn btn--primary">{{ locale.t().hero.ctaSample }}</a>
+        <a href="#productos" class="btn btn--outline">{{ locale.t().hero.ctaProducts }}</a>
+      </div>
+
+      <ul class="hero__stats" [attr.aria-label]="locale.t().hero.statsLabel">
+        <li *ngFor="let stat of locale.t().hero.stats">
+          <strong>{{ stat.value }}</strong>
+          <span>{{ stat.label }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="hero__video-wrapper animate-in">
+      <div class="hero__video-frame">
+        <iframe
+          [src]="youtubeEmbedUrl | safeUrl"
+          [title]="locale.t().hero.videoTitle"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <p class="hero__video-caption">{{ locale.t().hero.videoCaption }}</p>
+    </div>
+  </div>
+
+  <a href="#nosotros" class="hero__scroll" [attr.aria-label]="locale.t().hero.scrollLabel">
+    <span></span>
+  </a>
+</section>

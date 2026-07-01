@@ -1,0 +1,57 @@
+<section id="productos" class="products section" aria-labelledby="products-title">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label">{{ locale.t().products.label }}</span>
+      <h2 id="products-title" class="section-title">{{ locale.t().products.title }}</h2>
+      <div class="maya-divider" aria-hidden="true"><span></span></div>
+      <p class="section-subtitle">{{ locale.t().products.subtitle }}</p>
+    </header>
+
+    <div class="products__grid">
+      <article *ngFor="let product of locale.t().products.items" class="products__card">
+        <div class="products__card-image">
+          <img [src]="product.image" [alt]="product.imageAlt" loading="lazy" width="400" height="220">
+        </div>
+        <div class="products__card-body">
+          <div class="products__card-header">
+            <span class="products__icon" aria-hidden="true">{{ product.icon }}</span>
+            <h3>{{ product.name }}</h3>
+          </div>
+          <p class="products__description">{{ product.description }}</p>
+          <ul class="products__specs">
+            <li *ngFor="let spec of product.specs">{{ spec }}</li>
+          </ul>
+          <a href="#contacto" class="products__link">{{ locale.t().products.consultLink }}</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="products__varieties">
+      <header class="products__varieties-header">
+        <h3>{{ locale.t().products.varietiesTitle }}</h3>
+        <p>{{ locale.t().products.varietiesIntro }}</p>
+      </header>
+
+      <div class="products__varieties-grid">
+        <article *ngFor="let variety of locale.t().products.varieties" class="products__variety-card">
+          <span class="products__variety-origin">{{ variety.origin }}</span>
+          <h4>{{ variety.name }}</h4>
+          <p>{{ variety.description }}</p>
+          <ul class="products__variety-traits">
+            <li *ngFor="let trait of variety.traits">{{ trait }}</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <div class="products__cultivation">
+      <h3>{{ locale.t().products.cultivationTitle }}</h3>
+      <ul class="products__cultivation-grid">
+        <li *ngFor="let method of locale.t().products.cultivation">
+          <strong>{{ method.title }}</strong>
+          <p>{{ method.detail }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
